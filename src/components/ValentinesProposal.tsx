@@ -91,7 +91,30 @@ export default function ValentinesProposal() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            Congratulations! You have completed the game.
+            <motion.div
+  key="step-0"
+  className={`flex flex-col items-center text-center ${playfairDisplay.className}`}
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.6 }}
+>
+  <h2 className="text-5xl font-bold mb-6">🎮 Level Complete!</h2>
+
+  <div className="bg-white/10 backdrop-blur-md rounded-2xl px-8 py-6 shadow-xl border border-white/20">
+    <p className="text-2xl mb-2">🏆 Achievement Unlocked</p>
+    <p className="text-xl mb-4">“Keeper of Our Core Memories”</p>
+
+    <div className="space-y-2 text-lg">
+      <p>All memories discovered.</p>
+      <p>All hearts matched.</p>
+      <p className="text-pink-300 font-semibold">
+        Bonus reward unlocked: A special question awaits…
+      </p>
+    </div>
+  </div>
+</motion.div>
+
           </motion.h2>
         )}
         {step === 1 && (
@@ -103,7 +126,7 @@ export default function ValentinesProposal() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            I have a surprise for you!
+            
           </motion.h2>
         )}
         {step === 2 && (
@@ -135,8 +158,8 @@ export default function ValentinesProposal() {
               Will you be my Valentine?
             </h2>
             <Image
-              src="/sad_hamster.png"
-              alt="Sad Hamster"
+              src="/sad_panda.png"
+              alt="Sad Panda"
               width={200}
               height={200}
             />
@@ -166,27 +189,46 @@ export default function ValentinesProposal() {
             </div>
           </motion.div>
         )}
-        {step === 3 && (
-          <motion.div
-            key="step-3"
-            className={`text-4xl font-semibold mb-4 flex flex-col justify-center items-center ${playfairDisplay.className}`}
-            transition={{ duration: 1 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            Thank you for accepting, I love you! 💕
-            <p className="text-sm mt-4">For more information, write me!!! 💌</p>
-            <Image
-              src="/hamster_jumping.gif"
-              alt="Hamster Feliz"
-              width={200}
-              height={200}
-              unoptimized
-            />
-          </motion.div>
-        )}
+{step === 3 && (
+  <motion.div
+    key="step-3"
+    className={`text-4xl font-semibold mb-4 flex flex-col justify-center items-center text-center ${playfairDisplay.className}`}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 1 }}
+  >
+    <p>Happy Propose day mumu channnnnn</p>
+    <p>I love you my bauuuu! 💕</p>
+    <p>Thank you for coming into my life!</p>
+    <p>Happy Valentines To my One & only Valentine ❤️</p>
+
+    {/* Rotating image wrapper */}
+    <motion.div
+      initial={{ rotate: 0 }}
+      animate={{ rotate: -90 }}
+      transition={{
+        delay: 2,
+        duration: 1,
+        ease: "easeInOut"
+      }}
+      className="mt-4 flex justify-center items-center"
+    >
+      <Image
+        className="object-contain"
+        src="/hamster_jumping.gif"
+        alt="Hamster Feliz"
+        width={200}
+        height={200}
+        unoptimized
+      />
+    </motion.div>
+  </motion.div>
+)}
+
       </AnimatePresence>
+
+
 
       {showFireworks && (
         <div className="absolute w-full h-full">
